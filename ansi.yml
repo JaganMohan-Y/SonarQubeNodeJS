@@ -7,9 +7,6 @@
 
      npm: name=forever global=yes state=present
 
-   - name: cloning the git repository
-     command: git clone https://github.com/anujdevopslearn/SonarQubeNodeJS
-
    - name: installing npm
 
      command: npm install
@@ -20,4 +17,4 @@
 
    - name: starting nodejs app
 
-     command: forever start /root/SonarQubeNodeJS/app/server.js
+     command: forever start /SonarQubeNodeJS/app/server.js

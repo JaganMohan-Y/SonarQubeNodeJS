@@ -4,19 +4,14 @@
   tasks:
 
    - name: Install forever
-
      npm: name=forever global=yes state=present
 
    - name: installing npm
-
      command: npm install
-
-     args:
-
-       chdir: ~/SonarQubeNodeJS
+      args:
+         chdir: ~/SonarQubeNodeJS
 
    - name: starting nodejs app
-
      command: forever start /SonarQubeNodeJS/app/server.js
      
    - name: deploy execute

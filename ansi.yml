@@ -1,0 +1,23 @@
+---
+
+- hosts: webservers
+  tasks:
+
+   - name: Install forever
+
+     npm: name=forever global=yes state=present
+
+   - name: cloning the git repository
+     command: git clone https://github.com/anujdevopslearn/SonarQubeNodeJS
+
+   - name: installing npm
+
+     command: npm install
+
+     args:
+
+       chdir: ~/SonarQubeNodeJS
+
+   - name: starting nodejs app
+
+     command: forever start /root/SonarQubeNodeJS/app/server.js
